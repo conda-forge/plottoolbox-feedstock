@@ -31,7 +31,7 @@ requirements:
     - pandas
     - pydantic
     - typing-extensions
-    - toolbox_utils >=3.0.0,<4.0.0
+    - toolbox_utils >=5.0.0,<6.0.0
     - matplotlib-base
 
 test:

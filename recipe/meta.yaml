@@ -1,5 +1,5 @@
 {% set name = "plottoolbox" %}
-{% set version = "104.3.1" %}
+{% set version = "104.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/plottoolbox-{{ version }}.tar.gz
-  sha256: 4b3d09b0872c9d9da0b8cd276a8dcf310bd357cc8e44c6c71a4c3d6965f2f777
+  sha256: 14a5655c07bc29198d8066f9af7c2d4af878523d45c836466731fa607ddaae93
 
 build:
   entry_points:
@@ -30,7 +30,6 @@ requirements:
     - scipy
     - pandas
     - pydantic
-    - typing-extensions
     - toolbox_utils >=5.0.0,<6.0.0
     - matplotlib-base
 

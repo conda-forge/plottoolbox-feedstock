@@ -1,5 +1,5 @@
 {% set name = "plottoolbox" %}
-{% set version = "104.3.2" %}
+{% set version = "104.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/plottoolbox-{{ version }}.tar.gz
-  sha256: 14a5655c07bc29198d8066f9af7c2d4af878523d45c836466731fa607ddaae93
+  sha256: 6a87e6f3d95437b2801d930c6f3a33a4f02b6f35d5e6400b1b1028094fdc217e
 
 build:
   entry_points:

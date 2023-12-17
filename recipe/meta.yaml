@@ -14,7 +14,7 @@ build:
     - plottoolbox = plottoolbox.plottoolbox:_main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -30,8 +30,12 @@ requirements:
     - scipy
     - pandas
     - pydantic
-    - toolbox_utils >=5.0.0,<6.0.0
-    - matplotlib-base
+    - matplotlib
+    - dateparser
+    - pint !=0.21*
+    - pint-pandas
+    - tabulate
+    - xlsxwriter
 
 test:
   imports:

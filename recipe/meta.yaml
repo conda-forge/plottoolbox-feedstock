@@ -30,7 +30,7 @@ requirements:
     - scipy
     - pandas
     - pydantic
-    - matplotlib
+    - matplotlib-base
     - dateparser
     - pint !=0.21*
     - pint-pandas

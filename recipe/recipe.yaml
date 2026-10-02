@@ -1,0 +1,67 @@
+schema_version: 1
+
+context:
+  name: plottoolbox
+  version: "105.2.4"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 0cd4be50a28dec6301c9b3d2be88b8ad9cb65c85814cc6539b6498b268b8f04e
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps
+  python:
+    entry_points:
+      - plottoolbox = plottoolbox.plottoolbox:_main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=45
+    - setuptools-scm >=6.2
+    - wheel
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - cltoolbox >=1.0.0
+    - numpy
+    - scipy
+    - pandas
+    - pydantic
+    - matplotlib-base
+    - dateparser
+    - pint !=0.21*
+    - pint-pandas
+    - tabulate
+    - xlsxwriter
+
+tests:
+  - python:
+      imports:
+        - plottoolbox
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - plottoolbox --help
+
+about:
+  summary: Command line script and Python library to make plots from data files.
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  homepage: https://pypi.org/project/plottoolbox/
+
+extra:
+  recipe-maintainers:
+    - timcera

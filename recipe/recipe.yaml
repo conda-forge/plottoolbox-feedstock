@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: plottoolbox
-  version: "105.2.4"
+  version: "105.2.5"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 0cd4be50a28dec6301c9b3d2be88b8ad9cb65c85814cc6539b6498b268b8f04e
+  sha256: fd843902d9573670b9c9e8910c331e438b838104eb3d3953685dfafb3337eaa1
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps
   python:
@@ -23,8 +23,8 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - setuptools >=45
-    - setuptools-scm >=6.2
+    - setuptools >=80
+    - setuptools-scm >=8
     - wheel
     - pip
   run:

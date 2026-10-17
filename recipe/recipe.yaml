@@ -13,7 +13,7 @@ source:
   sha256: fd843902d9573670b9c9e8910c331e438b838104eb3d3953685dfafb3337eaa1
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps
   python:
@@ -28,18 +28,23 @@ requirements:
     - wheel
     - pip
   run:
-    - python >=${{ python_min }}
+    - python >=3.10
     - cltoolbox >=1.0.0
-    - numpy
-    - scipy
-    - pandas
-    - pydantic
-    - matplotlib-base
     - dateparser
+    - matplotlib-base
+    - numpy
+    - odfpy >=1.4.1
+    - openpyxl >=3.1.5
+    - pandas
     - pint !=0.21*
     - pint-pandas
+    - pydantic
+    - python-calamine >=0.3.0
+    - pyxlsb >=1.0.10
+    - scipy
     - tabulate
-    - xlsxwriter
+    - xlrd >=2.0.1
+    - xlsxwriter >=3.2.0
 
 tests:
   - python:
